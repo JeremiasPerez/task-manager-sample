@@ -1,17 +1,32 @@
 
 import '../styles/Dialogo.css'
+import {useEffect, useRef} from 'react'
 
-function Dialogo({open, gestionarCierre}) {
+function Dialogo({open, gestionarCierre, idTarea}) {
 
     const estadoDialogo = open ? 'mostrar' : 'ocultar'
+
+    const refNombre = useRef(null)
+    const refDescr = useRef(null)
+
+    useEffect(() => {
+        (async () => {
+            if (idTarea == null) return
+            const ret = await fetch('http://localhost:3001/api/tareas/'+idTarea)
+            const t = await ret.json()
+            refNombre.current.innerText = t.nombre
+            refDescr.current.defaultValue = t.descripcion
+            console.log(t)
+        })()
+    }, [idTarea])
 
     return (
         <div className={estadoDialogo + ' dialogContainer'}>
             <div className="overlay"></div>
             <div className='contenidoDialogo'>
-                <div className="nombreTarea" contentEditable>Nombre tarea</div>
+                <div ref={refNombre} className="nombreTarea" contentEditable>Nombre tarea</div>
                 <div>
-                    <label>Descripción</label><input type="text" placeholder='Descripción'></input>
+                    <label>Descripción</label><input ref={refDescr} type="text" placeholder='Descripción'></input>
                 </div>
                 <div>
                     <label>Estado</label>

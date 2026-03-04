@@ -2,9 +2,9 @@
 import Tarea from './Tarea.jsx'
 import '../styles/Column.css'
 
-function Columna({ estadoTarea, tareasGrupo}){
+function Columna({ estadoTarea, tareasGrupo, gestionarClicEnTarea}){
 
-    const tareas = tareasGrupo.map((t) => <Tarea infoTarea={t}></Tarea>)
+    const tareas = tareasGrupo.map((t) => <Tarea gestionarClicEnTarea={gestionarClicEnTarea} infoTarea={t}></Tarea>)
 
     return (
         <div className="elementoColumna">

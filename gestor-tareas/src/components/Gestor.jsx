@@ -9,6 +9,7 @@ function Gestor(){
 
     const [abierto, setAbierto] = useState(false)
     const [listaTareas, setListaTareas] = useState([])
+    const [idTarea, setIdTarea] = useState(null)
 
     useEffect(() => {
         (async () => {
@@ -17,6 +18,8 @@ function Gestor(){
             setListaTareas(tareas)
         })()
     }, [])
+
+
 
     const tareasTodo = listaTareas.filter(t => t.estado === 'to do')
     const tareasInProgress = listaTareas.filter(t => t.estado === 'in progress')
@@ -30,15 +33,20 @@ function Gestor(){
         setAbierto(false)
     }
 
+    const gestionarClicEnTarea = (id) => {
+        setIdTarea(id)
+        setAbierto(true)
+    }
+
     return (
         <div>
             <button onClick={gestionarClickNuevaTarea}>Nueva tarea</button>
             <div className="contenedorColumnas">
-                <Columna estadoTarea="to do" tareasGrupo={tareasTodo}></Columna>
-                <Columna estadoTarea="in progress" tareasGrupo={tareasInProgress}></Columna>
-                <Columna estadoTarea="done" tareasGrupo={tareasDone}></Columna>
+                <Columna gestionarClicEnTarea={gestionarClicEnTarea} ClicestadoTarea="to do" tareasGrupo={tareasTodo}></Columna>
+                <Columna gestionarClicEnTarea={gestionarClicEnTarea} estadoTarea="in progress" tareasGrupo={tareasInProgress}></Columna>
+                <Columna gestionarClicEnTarea={gestionarClicEnTarea} estadoTarea="done" tareasGrupo={tareasDone}></Columna>
             </div>
-            <Dialogo open={abierto} gestionarCierre={cerrarDialogo}></Dialogo>
+            <Dialogo open={abierto} idTarea={idTarea} gestionarCierre={cerrarDialogo}></Dialogo>
         </div>
     )
 
