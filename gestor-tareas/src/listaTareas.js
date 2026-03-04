@@ -25,7 +25,7 @@ export const listaTareas = [
     categoria: 'frontend',
     responsable: 'jere',
     deadline: Date.parse('2026-02-24T16:00:00'),
-    prioridad: 3
+    prioridad: 1
     },
     {id: 4,
     nombre: 'Conectar frontend a backend',

@@ -1,0 +1,7 @@
+
+.contenedorColumnas{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 80vh;
+}

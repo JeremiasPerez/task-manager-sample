@@ -1,0 +1,24 @@
+
+.elementoColumna {
+    flex: 1;
+    border: solid 1px white;    
+}
+
+.contTareas{
+    display:flex;
+    flex-direction: column;
+    height: 85%;
+    align-items: center;
+    gap: 5px;
+}
+
+.tituloTarea{
+    font-weight: bold;
+    font-size: xx-large;
+    margin-bottom: 10px;
+}
+
+.cantidadTareas{
+
+}
+
