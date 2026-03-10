@@ -2,12 +2,16 @@
 import '../styles/Dialogo.css'
 import {useEffect, useRef} from 'react'
 
-function Dialogo({open, gestionarCierre, idTarea}) {
+function Dialogo({open, gestionarCierre, idTarea, onDelete}) {
 
     const estadoDialogo = open ? 'mostrar' : 'ocultar'
 
     const refNombre = useRef(null)
     const refDescr = useRef(null)
+
+    function gestionarClickEliminar(){
+        onDelete(idTarea)
+    }
 
     useEffect(() => {
         (async () => {
@@ -24,7 +28,7 @@ function Dialogo({open, gestionarCierre, idTarea}) {
         <div className={estadoDialogo + ' dialogContainer'}>
             <div className="overlay"></div>
             <div className='contenidoDialogo'>
-                <div ref={refNombre} className="nombreTarea" contentEditable>Nombre tarea</div>
+                <div ref={refNombre} className="nombreTarea" contentEditable suppressContentEditableWarning>Nombre tarea</div>
                 <div>
                     <label>Descripción</label><input ref={refDescr} type="text" placeholder='Descripción'></input>
                 </div>
@@ -54,9 +58,9 @@ function Dialogo({open, gestionarCierre, idTarea}) {
                     <label>Deadline</label><input type="date" ></input>
                 </div>
                 <div>
-                    <button onClick={gestionarCierre}>Cerrar</button>
-                    <button >Guardar</button>
-                    <button >Eliminar</button>
+                    <button className="boton" onClick={gestionarCierre}>Cerrar</button>
+                    <button  className="boton">Guardar</button>
+                    <button onClick={gestionarClickEliminar} className="boton">Eliminar</button>
                 </div>
             </div>
         </div>

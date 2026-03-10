@@ -9,7 +9,7 @@ function Tarea({ infoTarea, gestionarClicEnTarea }){
     const prioridades = ['baja', 'media', 'alta']
     const url = 'https://api.dicebear.com/9.x/toon-head/png?seed=' + infoTarea.responsable
     return (
-        <div className="tarea" onClick={manageClick}>
+        <div className="tarea hover:bg-white" onClick={manageClick}>
             <span className="nombreTarea">{infoTarea.nombre}</span>
             <div className="detallesTarea">
                 <div data-prioridad={infoTarea.prioridad} className="prioridad">{prioridades[infoTarea.prioridad-1]}</div>

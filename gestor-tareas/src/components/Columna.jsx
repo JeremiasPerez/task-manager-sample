@@ -4,7 +4,7 @@ import '../styles/Column.css'
 
 function Columna({ estadoTarea, tareasGrupo, gestionarClicEnTarea}){
 
-    const tareas = tareasGrupo.map((t) => <Tarea gestionarClicEnTarea={gestionarClicEnTarea} infoTarea={t}></Tarea>)
+    const tareas = tareasGrupo.map((t) => <Tarea key={t.id} gestionarClicEnTarea={gestionarClicEnTarea} infoTarea={t}></Tarea>)
 
     return (
         <div className="elementoColumna">
