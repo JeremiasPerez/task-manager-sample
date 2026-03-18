@@ -5,6 +5,7 @@ import Columna from './Columna.jsx'
 import Dialogo from './Dialogo.jsx'
 import ThemeSelector from './ThemeSelector.jsx'
 import Api from '../Api.js'
+import { filterByStatus } from '../utils.js'
 
 function Gestor(){
 
@@ -29,10 +30,9 @@ function Gestor(){
         cerrarDialogo()
     }
 
-    console.log(listaTareas)
-    const tareasTodo = listaTareas.filter(t => t.estado === 'to do')
-    const tareasInProgress = listaTareas.filter(t => t.estado === 'in progress')
-    const tareasDone = listaTareas.filter(t => t.estado === 'done')
+    const tareasTodo = filterByStatus(listaTareas, 'to do')
+    const tareasInProgress = filterByStatus(listaTareas, 'in progress')
+    const tareasDone = filterByStatus(listaTareas, 'done')
 
     const gestionarClickNuevaTarea = () => {
         setAbierto(true)
