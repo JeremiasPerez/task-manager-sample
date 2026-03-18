@@ -20,19 +20,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Puesta en marcha de Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      - name: Install dependencies
+      - name: Instalar dependencias
         run: npm ci
 
       - name: Build
         run: npm run build
 
-      - name: Upload artifact
+      - name: Subir artefacto a Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
@@ -43,5 +43,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Desplegar en Github Pages
         uses: actions/deploy-pages@v4
