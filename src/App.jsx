@@ -4,13 +4,15 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 import Gestor from './components/Gestor.jsx'
+import Login from './components/Login.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Gestor></Gestor>
+      {/*<Gestor></Gestor>*/}
+      <Login></Login>
     </>
   )
 }
