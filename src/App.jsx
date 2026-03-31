@@ -2,18 +2,21 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import {Routes, Route, BrowserRouter} from 'react-router-dom'
 
-import Gestor from './components/Gestor.jsx'
-import Login from './components/Login.jsx'
+import LoginPage from './pages/LoginPage.jsx'
+import RegisterPage from './pages/RegisterPage.jsx'
+import GestorPage from './pages/GestorPage.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      {/*<Gestor></Gestor>*/}
-      <Login></Login>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<LoginPage/>}></Route>
+        <Route path="/register" element={<RegisterPage/>}></Route>
+        <Route path="/" element={<GestorPage/>}></Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
