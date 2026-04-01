@@ -7,6 +7,11 @@ function Login () {
     const inputUsuario = useRef(null)
     const inputPass = useRef(null)
 
+    const token = localStorage.getItem('token')
+    if (token != null){
+        return <Navigate to="/"></Navigate>
+    }
+
     const handleClick = async () => {
 
         const datos = {

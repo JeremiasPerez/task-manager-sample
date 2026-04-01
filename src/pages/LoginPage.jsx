@@ -1,11 +1,21 @@
 
 
 import {useRef} from 'react'
+import { useNavigate, Navigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 function LoginPage () {
 
+
+    const token = localStorage.getItem('token')
+    if (token != null){
+        return <Navigate to="/"></Navigate>
+    }
+
     const inputUsuario = useRef(null)
     const inputPass = useRef(null)
+    const navigate = useNavigate()
+
 
     const handleClick = async () => {
 
@@ -21,7 +31,16 @@ function LoginPage () {
             }
         })
         const r = await response.json()
+        if(r.error != null) {
+            Swal.fire({
+                title: "Error!",
+                text: r.error,
+                icon: "error"
+            });
+            return 
+        }
         localStorage.setItem('token', r.token)
+        navigate('/')
         console.log('ok')
     }
 

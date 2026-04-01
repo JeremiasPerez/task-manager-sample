@@ -1,7 +1,7 @@
 
 .tarea{
     border: solid 1px white;
-    border-radius: 10%;
+    border-radius: 10px;
     width: 90%;
     display: grid;
     grid-template-columns: 1fr 50px;
