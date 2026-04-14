@@ -5,6 +5,7 @@ import '@testing-library/jest-dom/vitest'
 import Gestor from "../../src/components/Gestor"
 import Api from "../../src/Api"
 import {ThemeManager} from "../../src/components/ThemeManager"
+import { MemoryRouter } from "react-router-dom"
 
 vi.mock("../../src/Api")
 
@@ -19,7 +20,7 @@ describe("Gestor", () => {
       { id: 4, prioridad: 1, estado: 'done', categoria: 'cat4', responsable: 'yo', nombre: "Tarea 4" }
     ])
 
-    render(<ThemeManager><Gestor /></ThemeManager>)
+    render(<MemoryRouter><ThemeManager><Gestor /></ThemeManager></MemoryRouter>)
 
     await waitFor(() =>
       expect(screen.getByText("Tarea 1")).toBeInTheDocument()
