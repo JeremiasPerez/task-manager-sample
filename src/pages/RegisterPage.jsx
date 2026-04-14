@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { useNavigate, Navigate } from 'react-router-dom'
 import Navigation from '../components/Navigation'
+import Api from '../Api'
 
 export default function RegisterPage() {
     const navigate = useNavigate()
@@ -13,7 +14,7 @@ export default function RegisterPage() {
     }
 
     const handleClick = async () => {
-        const r = await Api.login(inputUsuario.current.value,inputPass.current.value)
+        const r = await Api.register(inputUsuario.current.value,inputPass.current.value)
         navigate('/login')
     }
 

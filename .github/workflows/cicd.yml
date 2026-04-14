@@ -47,7 +47,7 @@ jobs:
      - name: Build
        run: npm run build
        env:
-          VITE_API_URL: ${{ vars.VITE_BACKEND_URL }}
+          VITE_BACKEND_URL: ${{ vars.VITE_BACKEND_URL }}
 
      - name: Configurar Pages
        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
