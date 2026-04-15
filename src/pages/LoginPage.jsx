@@ -5,14 +5,16 @@ import Navigation from '../components/Navigation'
 import Api from '../Api'
 
 function LoginPage() {
+    const inputUsuario = useRef(null)
+    const inputPass = useRef(null)
+    const navigate = useNavigate()
+
+
     const token = localStorage.getItem('token')
     if (token != null) {
         return <Navigate to="/" />
     }
 
-    const inputUsuario = useRef(null)
-    const inputPass = useRef(null)
-    const navigate = useNavigate()
 
     const handleClick = async () => {
         const r = await Api.login(inputUsuario.current.value,inputPass.current.value)
