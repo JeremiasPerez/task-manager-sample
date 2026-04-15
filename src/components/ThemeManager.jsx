@@ -1,6 +1,6 @@
 
 import {createContext, useState, useEffect} from 'react'
-
+import PropTypes from 'prop-types'
 const ContextoTema = createContext(null)
 
 function ThemeManager ({children}){
@@ -23,6 +23,9 @@ function ThemeManager ({children}){
             {children}
         </ContextoTema>
     )
+}
+ThemeManager.propTypes = {
+    children: PropTypes.any
 }
 
 export {ContextoTema, ThemeManager}

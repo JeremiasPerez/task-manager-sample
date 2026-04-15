@@ -1,5 +1,6 @@
 import Api from '../Api'
 import { useEffect, useRef, useState } from 'react'
+import PropTypes from 'prop-types'
 
 function Dialogo({ open, gestionarCierre, idTarea, onDelete, onUpdate, onCreate }) {
     const refNombre = useRef(null)
@@ -241,6 +242,13 @@ function Dialogo({ open, gestionarCierre, idTarea, onDelete, onUpdate, onCreate 
             </div>
         </div>
     )
+}
+Dialogo.propTypes = {
+    open: PropTypes.boolean.isRequired,
+    gestionarCierre: PropTypes.func.isRequired,
+    idTarea: PropTypes.number,
+    onDelete: PropTypes.func.isRequired,
+    onCreate: PropTypes.func.isRequired
 }
 
 export default Dialogo

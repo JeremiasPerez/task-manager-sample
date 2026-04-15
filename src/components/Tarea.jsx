@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 function Tarea({ infoTarea, gestionarClicEnTarea, setIdTareaDrag }) {
     const manageClick = () => {
         gestionarClicEnTarea(infoTarea.id)
@@ -45,6 +47,11 @@ function Tarea({ infoTarea, gestionarClicEnTarea, setIdTareaDrag }) {
             </div>
         </button>
     )
+}
+Tarea.propTypes = {
+    infoTarea: PropTypes.object.isRequired,
+    gestionarClicEnTarea: PropTypes.func.isRequired,
+    setIdTareaDrag: PropTypes.func.isRequired
 }
 
 export default Tarea
