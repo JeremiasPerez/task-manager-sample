@@ -13,7 +13,7 @@ function Columna({ estadoTarea, tareasGrupo, gestionarClicEnTarea, setIdTareaDra
     ))
 
     return (
-        <div onDragOver={(e) => {e.preventDefault()}} onDrop={(e) => {gestionarDropTarea(estadoTarea)}} className="
+        <div role="listitem" onDragOver={(e) => {e.preventDefault()}} onDrop={(e) => {gestionarDropTarea(estadoTarea)}} className="
             flex flex-col flex-1 min-w-[250px] max-h-full
             rounded-2xl
             bg-white/70 dark:bg-slate-900/70

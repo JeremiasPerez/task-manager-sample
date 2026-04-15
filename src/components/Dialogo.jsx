@@ -78,6 +78,7 @@ function Dialogo({ open, gestionarCierre, idTarea, onDelete, onUpdate, onCreate 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
             <div
+                role="button"
                 className="absolute inset-0 bg-black/50 backdrop-blur-sm"
                 onClick={gestionarCierre}
             ></div>
@@ -109,36 +110,37 @@ function Dialogo({ open, gestionarCierre, idTarea, onDelete, onUpdate, onCreate 
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                     <div className="md:col-span-2">
                         <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                            <textarea
+                                ref={refDescr}
+                                placeholder="Descripción"
+                                rows={4}
+                                className="w-full resize-none rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none transition focus:border-slate-500 focus:ring-4 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:focus:border-slate-400 dark:focus:ring-slate-700"
+                            />
+
                             Descripción
                         </label>
-                        <textarea
-                            ref={refDescr}
-                            placeholder="Descripción"
-                            rows={4}
-                            className="w-full resize-none rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none transition focus:border-slate-500 focus:ring-4 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:focus:border-slate-400 dark:focus:ring-slate-700"
-                        />
                     </div>
 
                     <div>
                         <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                            <select
+                                ref={refEstado}
+                                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none transition focus:border-slate-500 focus:ring-4 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:focus:border-slate-400 dark:focus:ring-slate-700"
+                            >
+                                <option value="to do">To do</option>
+                                <option value="in progress">In progress</option>
+                                <option value="done">Done</option>
+                            </select>
                             Estado
                         </label>
-                        <select
-                            ref={refEstado}
-                            className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none transition focus:border-slate-500 focus:ring-4 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:focus:border-slate-400 dark:focus:ring-slate-700"
-                        >
-                            <option value="to do">To do</option>
-                            <option value="in progress">In progress</option>
-                            <option value="done">Done</option>
-                        </select>
                     </div>
 
                     <div>
                         <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                            <input ref={refPrioridad} type="hidden" defaultValue="1" />
                             Prioridad
                         </label>
 
-                        <input ref={refPrioridad} type="hidden" defaultValue="1" />
 
                         <div className="grid grid-cols-3 gap-2 rounded-2xl bg-slate-100 p-1 dark:bg-slate-800">
                             <button
@@ -193,25 +195,27 @@ function Dialogo({ open, gestionarCierre, idTarea, onDelete, onUpdate, onCreate 
 
                     <div>
                         <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                            <input
+                                ref={refCategoria}
+                                type="text"
+                                placeholder="Categoría"
+                                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none transition focus:border-slate-500 focus:ring-4 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:focus:border-slate-400 dark:focus:ring-slate-700"
+                            />
                             Categoría
                         </label>
-                        <input
-                            ref={refCategoria}
-                            type="text"
-                            placeholder="Categoría"
-                            className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none transition focus:border-slate-500 focus:ring-4 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:focus:border-slate-400 dark:focus:ring-slate-700"
-                        />
+                        
                     </div>
 
                     <div>
                         <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                            <input
+                                ref={refDeadline}
+                                type="date"
+                                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none transition focus:border-slate-500 focus:ring-4 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:focus:border-slate-400 dark:focus:ring-slate-700"
+                            />
                             Deadline
                         </label>
-                        <input
-                            ref={refDeadline}
-                            type="date"
-                            className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none transition focus:border-slate-500 focus:ring-4 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:focus:border-slate-400 dark:focus:ring-slate-700"
-                        />
+                        
                     </div>
                 </div>
 
@@ -248,6 +252,7 @@ Dialogo.propTypes = {
     gestionarCierre: PropTypes.func.isRequired,
     idTarea: PropTypes.number,
     onDelete: PropTypes.func.isRequired,
+    onUpdate: PropTypes.func.isRequired,
     onCreate: PropTypes.func.isRequired
 }
 

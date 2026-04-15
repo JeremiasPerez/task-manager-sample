@@ -54,36 +54,38 @@ function LoginPage() {
                     <div className="space-y-5">
                         <div className="flex flex-col gap-2">
                             <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                                <input
+                                    ref={inputUsuario}
+                                    type="text"
+                                    placeholder="Introduce tu email"
+                                    className="w-full rounded-xl px-4 py-3 outline-none transition
+                                        bg-white dark:bg-slate-800
+                                        text-slate-800 dark:text-slate-100
+                                        border border-slate-300 dark:border-slate-700
+                                        focus:border-slate-500 dark:focus:border-slate-400
+                                        focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700"
+                                />
                                 Usuario
                             </label>
-                            <input
-                                ref={inputUsuario}
-                                type="text"
-                                placeholder="Introduce tu email"
-                                className="w-full rounded-xl px-4 py-3 outline-none transition
-                                    bg-white dark:bg-slate-800
-                                    text-slate-800 dark:text-slate-100
-                                    border border-slate-300 dark:border-slate-700
-                                    focus:border-slate-500 dark:focus:border-slate-400
-                                    focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700"
-                            />
+                            
                         </div>
 
                         <div className="flex flex-col gap-2">
                             <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                                <input
+                                    ref={inputPass}
+                                    type="password"
+                                    placeholder="Introduce tu contraseña"
+                                    className="w-full rounded-xl px-4 py-3 outline-none transition
+                                        bg-white dark:bg-slate-800
+                                        text-slate-800 dark:text-slate-100
+                                        border border-slate-300 dark:border-slate-700
+                                        focus:border-slate-500 dark:focus:border-slate-400
+                                        focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700"
+                                />
                                 Contraseña
                             </label>
-                            <input
-                                ref={inputPass}
-                                type="password"
-                                placeholder="Introduce tu contraseña"
-                                className="w-full rounded-xl px-4 py-3 outline-none transition
-                                    bg-white dark:bg-slate-800
-                                    text-slate-800 dark:text-slate-100
-                                    border border-slate-300 dark:border-slate-700
-                                    focus:border-slate-500 dark:focus:border-slate-400
-                                    focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700"
-                            />
+                            
                         </div>
 
                         <button

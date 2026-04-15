@@ -41,9 +41,9 @@ function Tarea({ infoTarea, gestionarClicEnTarea, setIdTareaDrag }) {
                     {prioridades[infoTarea.prioridad - 1]}
                 </span>
 
-                {infoTarea.categoria != null ? <span className="truncate rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300">
+                {infoTarea.categoria ==  null ? <></> : <span className="truncate rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300">
                     {infoTarea.categoria}
-                </span> : <></>}
+                </span>}
             </div>
         </button>
     )

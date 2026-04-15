@@ -14,7 +14,7 @@ export default function RegisterPage() {
     }
 
     const handleClick = async () => {
-        const r = await Api.register(inputUsuario.current.value,inputPass.current.value)
+        await Api.register(inputUsuario.current.value,inputPass.current.value)
         navigate('/login')
     }
 
@@ -34,26 +34,26 @@ export default function RegisterPage() {
                     <div className="space-y-5">
                         <div className="flex flex-col gap-2">
                             <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                                <input
+                                    ref={inputUsuario}
+                                    type="text"
+                                    placeholder="Introduce tu email"
+                                    className="w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3 text-slate-800 dark:text-slate-100 outline-none transition focus:border-slate-500 dark:focus:border-slate-400 focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700"
+                                />
                                 Usuario
-                            </label>
-                            <input
-                                ref={inputUsuario}
-                                type="text"
-                                placeholder="Introduce tu email"
-                                className="w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3 text-slate-800 dark:text-slate-100 outline-none transition focus:border-slate-500 dark:focus:border-slate-400 focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700"
-                            />
+                            </label>       
                         </div>
 
                         <div className="flex flex-col gap-2">
                             <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                                <input
+                                    ref={inputPass}
+                                    type="password"
+                                    placeholder="Introduce tu contraseña"
+                                    className="w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3 text-slate-800 dark:text-slate-100 outline-none transition focus:border-slate-500 dark:focus:border-slate-400 focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700"
+                                />
                                 Contraseña
                             </label>
-                            <input
-                                ref={inputPass}
-                                type="password"
-                                placeholder="Introduce tu contraseña"
-                                className="w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3 text-slate-800 dark:text-slate-100 outline-none transition focus:border-slate-500 dark:focus:border-slate-400 focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700"
-                            />
                         </div>
 
                         <button
@@ -67,6 +67,7 @@ export default function RegisterPage() {
                     <p className="mt-6 text-center text-sm text-slate-500 dark:text-slate-400">
                         ¿Ya tienes cuenta?{' '}
                         <span
+                            role="link"
                             onClick={() => navigate('/login')}
                             className="cursor-pointer font-medium text-slate-800 dark:text-slate-200 hover:underline"
                         >
