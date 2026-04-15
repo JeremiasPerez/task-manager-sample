@@ -63,8 +63,7 @@ function LoginPage() {
                                         text-slate-800 dark:text-slate-100
                                         border border-slate-300 dark:border-slate-700
                                         focus:border-slate-500 dark:focus:border-slate-400
-                                        focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700"
-                                />
+                                        focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700"/>
                                 Usuario
                             </label>
                             
@@ -81,8 +80,7 @@ function LoginPage() {
                                         text-slate-800 dark:text-slate-100
                                         border border-slate-300 dark:border-slate-700
                                         focus:border-slate-500 dark:focus:border-slate-400
-                                        focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700"
-                                />
+                                        focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700"/>
                                 Contraseña
                             </label>
                             
@@ -94,8 +92,7 @@ function LoginPage() {
                                 bg-slate-900 text-white
                                 hover:bg-slate-800
                                 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200
-                                shadow-md hover:shadow-lg active:scale-[0.99]"
-                        >
+                                shadow-md hover:shadow-lg active:scale-[0.99]">
                             Log in
                         </button>
                     </div>
@@ -104,8 +101,7 @@ function LoginPage() {
                         ¿Todavía sin cuenta?{' '}
                         <span
                             onClick={() => navigate('/register')}
-                            className="cursor-pointer font-medium text-slate-800 dark:text-slate-200 hover:underline"
-                        >
+                            className="cursor-pointer font-medium text-slate-800 dark:text-slate-200 hover:underline">
                             Regístrate
                         </span>
                     </p>
