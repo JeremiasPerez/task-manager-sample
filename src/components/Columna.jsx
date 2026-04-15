@@ -1,4 +1,5 @@
 import Tarea from './Tarea.jsx'
+import PropTypes from 'prop-types'
 
 function Columna({ estadoTarea, tareasGrupo, gestionarClicEnTarea, setIdTareaDrag, gestionarDropTarea }) {
 
@@ -52,6 +53,13 @@ function Columna({ estadoTarea, tareasGrupo, gestionarClicEnTarea, setIdTareaDra
             </div>
         </div>
     )
+}
+Columna.propTypes = {
+    estadoTarea: PropTypes.string.isRequired,
+    tareasGrupo: PropTypes.array.isRequired,
+    gestionarClicEnTarea: PropTypes.func.isRequired,
+    setIdTareaDrag: PropTypes.func.isRequired,
+    gestionarDropTarea: PropTypes.func.isRequired,
 }
 
 export default Columna
