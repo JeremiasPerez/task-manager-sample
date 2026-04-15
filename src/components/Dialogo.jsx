@@ -244,7 +244,7 @@ function Dialogo({ open, gestionarCierre, idTarea, onDelete, onUpdate, onCreate 
     )
 }
 Dialogo.propTypes = {
-    open: PropTypes.boolean.isRequired,
+    open: PropTypes.bool.isRequired,
     gestionarCierre: PropTypes.func.isRequired,
     idTarea: PropTypes.number,
     onDelete: PropTypes.func.isRequired,
