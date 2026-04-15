@@ -6,6 +6,10 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     setupFiles: './test/frontend/setup.js',
-    dir: './test/frontend'
+    dir: './test/frontend',
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'lcov']
+    }
   }
 })
