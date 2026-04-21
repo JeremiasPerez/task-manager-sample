@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig(({ mode }) => ({
   plugins: [react(), tailwindcss()],
-  base: mode === 'production' ? '/task-manager-sample/' : '/',
+  base: mode === 'production' ? '/' : '/',
   server: {
     host: true,
     port: 5173,
